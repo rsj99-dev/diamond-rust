@@ -1,0 +1,9 @@
+# 默认按文本处理并统一成 LF，避免 Windows 提交把整个仓库改一遍。
+* text=auto eol=lf
+
+# PowerShell 脚本保留 CRLF，Windows PowerShell 5.1 对 LF 的 here-string 解析不稳。
+*.ps1 text eol=crlf
+
+*.png binary
+*.jpg binary
+*.ico binary

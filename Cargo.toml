@@ -1,0 +1,42 @@
+[package]
+name = "diamond-rust"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "A Rust reimplementation of DIAMOND: fast protein and translated DNA alignment"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+keywords = ["bioinformatics", "blast", "protein-alignment", "seed-and-extend"]
+categories = ["science", "command-line-utilities"]
+authors = ["任师杰"]
+# Fill these in after the GitHub repository exists; crates.io rejects placeholder URLs.
+# repository = "https://github.com/<user>/diamond-rust"
+# homepage = "https://github.com/<user>/diamond-rust"
+# The DIAMOND C++ tree and benchmark products stay out of `cargo package`.
+exclude = [
+    "diamond-2.2.8/**",
+    "bench/e2e/run/**",
+    "bench/e2e/*.dmnd",
+    "bench/e2e/db_prot.fa",
+    "bench/e2e/db_x*.fa",
+]
+
+[[bin]]
+name = "diamond-rust"
+path = "src/main.rs"
+
+[lib]
+name = "diamond_rust"
+path = "src/lib.rs"
+
+[dependencies]
+rayon = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = false
+
+[profile.bench]
+inherits = "release"

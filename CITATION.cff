@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "diamond-rust"
+abstract: "A Rust reimplementation of DIAMOND for fast protein and translated DNA alignment."
+type: software
+authors:
+  - family-names: "Ren"
+    given-names: "Shijie"
+version: 0.1.0
+date-released: "2026-10-23"
+license: GPL-3.0-or-later
+keywords:
+  - bioinformatics
+  - sequence alignment
+  - BLAST
+  - DIAMOND
+  - Rust
+references:
+  - type: article
+    title: "Fast and sensitive protein alignment using DIAMOND"
+    authors:
+      - family-names: "Buchfink"
+        given-names: "Benjamin"
+      - family-names: "Xie"
+        given-names: "Chao"
+      - family-names: "Huson"
+        given-names: "Daniel H."
+    journal: "Nature Methods"
+    volume: 12
+    start: 59
+    end: 60
+    year: 2015
+    doi: "10.1038/nmeth.3176"
